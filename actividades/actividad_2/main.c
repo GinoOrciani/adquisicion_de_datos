@@ -13,7 +13,17 @@ int main() {
     stdio_init_all();
 
     // Inicializacion de I2C
+i2c_init(i2c0, 1000 * 100);
+i2c_init(i2cl, 1000 * 100);
+gpio_set_function(4, GPIO FUNC 120);
+gpio_set_function(5, GPIO FUNC I2C);
+gpio_pull_up (4);
+gpio_pull_up (5);
 
+    gpio_set_function(2, GPIO FUNC I2C);
+    gpio_set_function(3, GPIO FUNC I2C);
+    gpio_pull_up (2);
+    gpio_pull_up (3);
     // Inicializacion del LCD
     lcd_init(i2c0, 0x27);
     // Inicializo BMP280
